@@ -9,7 +9,7 @@ registerCommand({
     options: "",
     showInHelp: false,
     execute: (args) => {
-        ChatLib.chat(ChatLib.getCenteredText("&b--------------[ &a&lColeweight &b]--------------"))
+        ChatLib.chat(ChatLib.getCenteredText("&b--------------[ &a&lBetterColeweight &b]--------------"))
         ChatLib.chat(ChatLib.getCenteredText("&7(Hover over command to see usage.)"))
         Object.keys(helpCommands).forEach(key => {
             ChatLib.chat(ChatLib.getCenteredText("&a&l" + capitalizeFirst(key)))
@@ -30,6 +30,6 @@ Chats a chat message with specified parameters.
 */
 export function helpCommand(command, desc, usage)
 {
-    ChatLib.chat(new TextComponent(`&a◆ /cw ${command} => &b${desc}`).setHoverValue(`${"/cw " + command + " " + usage}`))
+    ChatLib.chat(new TextComponent(`&a◆ /bcw ${command} => &b${desc}`).setHoverValue(`${"/bcw " + command + " " + usage}`))
 }
 

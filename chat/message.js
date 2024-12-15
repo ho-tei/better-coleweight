@@ -69,7 +69,7 @@ register("step", () => {
         constants.data.first_time = false;
         constants.data.save();
         ChatLib.chat("");
-        new TextComponent(ChatLib.getCenteredText(`${PREFIX}&bView commands: /cw help`)).chat();
+        new TextComponent(ChatLib.getCenteredText(`${PREFIX}&bView commands: /bcw help`)).chat();
         new TextComponent(ChatLib.getCenteredText(`${PREFIX}&bJoin my discord &3here&b to keep up with development!`))
         .setClickAction("open_url")
         .setClickValue("https://discord.gg/yj4P4FqHPA")

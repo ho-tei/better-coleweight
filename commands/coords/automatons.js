@@ -30,7 +30,7 @@ registerCommand({
 
         if(args[1] != "toggle")
         {
-            new TextComponent(`${PREFIX}&bStand in the pot in &3this&b picture and do /cw ${WAYPOINTNAME} toggle`)
+            new TextComponent(`${PREFIX}&bStand in the pot in &3this&b picture and do /bcw ${WAYPOINTNAME} toggle`)
             .setClickAction("open_url")
             .setClickValue("https://i.imgur.com/i4V5tzU.png")
             .chat()
@@ -44,7 +44,7 @@ registerCommand({
                 y = startPos[1],
                 z = startPos[2]
 
-                let coordsRows = FileLib.read("Coleweight", "data/automatons.txt").split("\n")
+                let coordsRows = FileLib.read("BetterColeweight", "data/automatons.txt").split("\n")
                 coordsRows.forEach(unsplitRow => {
                     let row = unsplitRow.split(" ")
                     waypoints.push([x + parseInt(row[0]), y + parseInt(row[1]), z + parseInt(row[2])])

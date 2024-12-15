@@ -2,7 +2,7 @@ import settings from "../settings";
 import { dwarvenChecker, registerWhen } from "../util/helperFunctions";
 import { drawCoolWaypoint } from "../util/renderUtil"
 
-let waypoints = JSON.parse(FileLib.read("Coleweight", "data/glaciteTunnels.json"))
+let waypoints = JSON.parse(FileLib.read("BetterColeweight", "data/glaciteTunnels.json"))
 waypoints.forEach(wp => {
     let rgb
 

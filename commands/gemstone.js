@@ -24,17 +24,17 @@ registerCommand({
                 statsHoverCheck = true
                 new TextComponent(`${PREFIX}&bHold whatever drill you plan to use, and hover over your profile in /sbmenu. &7[&eNEXT&7]`)
                 .setClickAction("run_command")
-                .setClickValue("/cw gemstone m1")
+                .setClickValue("/bcw gemstone m1")
                 .chat()
                 break
             case "m1":
                 textComponents = [
                     new TextComponent("&7[&aUsing blue cheese omelette&7] ")
                     .setClickAction("run_command")
-                    .setClickValue("/cw gemstone m2"),
+                    .setClickValue("/bcw gemstone m2"),
                     new TextComponent("&7[&cNot Using blue cheese omelette&7]")
                     .setClickAction("run_command")
-                    .setClickValue("/cw gemstone m3")
+                    .setClickValue("/bcw gemstone m3")
                 ]
                 new Message(textComponents).chat()
                 break
@@ -44,16 +44,16 @@ registerCommand({
                 textComponents = [
                     new TextComponent("&7[&cRuby&7] ")
                     .setClickAction("run_command")
-                    .setClickValue("/cw gemstone m4"),
+                    .setClickValue("/bcw gemstone m4"),
                     new TextComponent("&7[&dJasper/Opal&7] ")
                     .setClickAction("run_command")
-                    .setClickValue("/cw gemstone m5"),
+                    .setClickValue("/bcw gemstone m5"),
                     new TextComponent("&7[&dJade&7] ")
                     .setClickAction("run_command")
-                    .setClickValue("/cw gemstone m6"),
+                    .setClickValue("/bcw gemstone m6"),
                     new TextComponent("&7[&aAny other gemstone&7]")
                     .setClickAction("run_command")
-                    .setClickValue("/cw gemstone m7")
+                    .setClickValue("/bcw gemstone m7")
                 ]
                 new Message(textComponents).chat()
                 break

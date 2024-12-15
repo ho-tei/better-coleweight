@@ -3,7 +3,7 @@ const PREFIX = constants.PREFIX
 
 
 register("chat", (key) => {
-    ChatLib.command(`cw setkey ${key}`, true)
+    ChatLib.command(`bcw setkey ${key}`, true)
 }).setCriteria(/Your new API key is (.+)/)
 
 

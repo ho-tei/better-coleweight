@@ -23,7 +23,7 @@ registerCommand({
     execute: (args) => {
         if(args[1] != "toggle")
         {
-            new TextComponent(`${PREFIX}&bGo to the place in &3this&b picture and do /cw spiral toggle`)
+            new TextComponent(`${PREFIX}&bGo to the place in &3this&b picture and do /bcw spiral toggle`)
             .setClickAction("open_url")
             .setClickValue("https://i.imgur.com/dyL30GD.png")
             .chat()

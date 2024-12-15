@@ -12,7 +12,7 @@ registerCommand({
     category: "miscellaneous",
     execute: (args) => {
         if(args[1] == undefined)
-            return ChatLib.chat(`${constants.PREFIX}&eUnknown usage! Hit tab on "/cw rankcolor " to see usages.`);
+            return ChatLib.chat(`${constants.PREFIX}&eUnknown usage! Hit tab on "/bcw rankcolor " to see usages.`);
         switch(args[1].toLowerCase())
         {
         case "list":
@@ -24,7 +24,7 @@ registerCommand({
                 colors.forEach(color => {
                     ChatLib.chat(color + " - §" + color + "Hello")
                 });
-                ChatLib.chat(`${PREFIX}&bTo set color: /cw rankcolor set (number/letter)`);
+                ChatLib.chat(`${PREFIX}&bTo set color: /bcw rankcolor set (number/letter)`);
             })
             .catch(err => {
                 if(settings.debug)
@@ -53,7 +53,7 @@ registerCommand({
             reloadColor();
             break;
         default:
-            ChatLib.chat(`${constants.PREFIX}&eUnknown usage! Hit tab on "/cw rankcolor " to see usages.`)
+            ChatLib.chat(`${constants.PREFIX}&eUnknown usage! Hit tab on "/bcw rankcolor " to see usages.`)
         }
     }
 })

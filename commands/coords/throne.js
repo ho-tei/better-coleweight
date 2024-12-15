@@ -24,7 +24,7 @@ registerCommand({
     execute: (args) => {
         if(args[1] != "toggle")
         {
-            ChatLib.chat(`${PREFIX}&bGo to the throne and sit on the back block then run /cw throne toggle.`)
+            ChatLib.chat(`${PREFIX}&bGo to the throne and sit on the back block then run /bcw throne toggle.`)
         }
         else
         {

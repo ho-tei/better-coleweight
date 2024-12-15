@@ -26,7 +26,7 @@ registerCommand({
 
         if(args[1] != "toggle")
         {
-            new TextComponent(`${PREFIX}&bStand on the leftmost key guardian and do /cw ${WAYPOINTNAME} toggle`)
+            new TextComponent(`${PREFIX}&bStand on the leftmost key guardian and do /bcw ${WAYPOINTNAME} toggle`)
             .chat()
         }
         else

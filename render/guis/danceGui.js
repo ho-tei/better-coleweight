@@ -6,7 +6,7 @@ import { BaseGui } from "../BaseGui"
 let danceTime = 0 // dance time is when the game checks for player failed challenge
 let danceIndex = 0
 let blockIndex = 0
-const danceData = FileLib.read("Coleweight", "data/dance.txt").split("\n")
+const danceData = FileLib.read("BetterColeweight", "data/dance.txt").split("\n")
 let updatedBlock = false
 let punches = 0
 let danceStreak = 0

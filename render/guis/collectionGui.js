@@ -7,7 +7,7 @@ import { addNotation, getObjectValue, addCommas } from "../../util/helperFunctio
 import request from "../../../requestV2"
 
 let itemStringed = "",
-    trackedItem = "Collection Not set! /cw track",
+    trackedItem = "Collection Not set! /bcw track",
     itemValues = [],
     uptimeSeconds = 0,
     trackingItem = false,
@@ -142,7 +142,7 @@ function calcApi(apiPath, tempUuid)
 
 function trackCollection(collection)
 {
-    let collections = JSON.parse(FileLib.read("Coleweight", "data/collections.json"))
+    let collections = JSON.parse(FileLib.read("BetterColeweight", "data/collections.json"))
     if(collection == undefined) return ChatLib.chat(`${constants.PREFIX}&eThat is not a valid collection! (or is not supported)`)
     if(collection == "obby") collection = "obsidian"
     if(collection == "cobble") collection = "cobblestone"

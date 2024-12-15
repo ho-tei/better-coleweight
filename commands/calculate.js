@@ -8,7 +8,7 @@ import { helpCommand } from "./help"
 
 registerCommand({
     aliases: ["calc", "calculate"],
-    description: "Commands for calculating things. Do '/cw calc help'.",
+    description: "Commands for calculating things. Do '/bcw calc help'.",
     options: "[help]",
     category: "info",
     subcommands: [["tick", "hotm", "speed"]],
@@ -28,7 +28,7 @@ registerCommand({
                 calcSpeed(args[2])
                 break
             case "help":
-                ChatLib.chat("&b--------------[ &a&l/cw calculate &b]------------")
+                ChatLib.chat("&b--------------[ &a&l/bcw calculate &b]------------")
                 ChatLib.chat("&7(Hover over command to see usage.)")
                 helpCommand("calculate tick", "Calculates tick data.", "(mining speed) (('r','jade', etc) || breaking power of block))")
                 helpCommand("calculate speed", "Calculates the ratio of mining speed 2 to professional with a certain amount of powder.", "(powder)")

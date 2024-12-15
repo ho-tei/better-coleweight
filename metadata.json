@@ -1,8 +1,8 @@
 {
-  "name": "Coleweight",
-  "creator": "Ninjune",
+  "name": "BetterColeweight",
+  "creator": "vanguard",
   "entry": "index.js",
   "description": "Mining utilities.",
-  "version": "1.13.3",
+  "version": "1.0.0",
   "requires": ["axios", "PogData", "Vigilance", "Elementa", "requestV2"]
 }

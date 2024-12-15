@@ -39,7 +39,7 @@ registerWhen(register("renderPlayerList", event => {
     if(timers.playerList <= 0)
     {
         timers.playerList = 20
-        ChatLib.chat(`${constants.PREFIX}&bCW has canceled opening tab! (disable &aStreamer Mode&b in settings if you don't want this.)`)
+        ChatLib.chat(`${constants.PREFIX}&bBCW has canceled opening tab! (disable &aStreamer Mode&b in settings if you don't want this.)`)
     }
 
     cancel(event)
@@ -49,7 +49,7 @@ registerWhen(register("renderPlayerList", event => {
 registerWhen(register("renderDebug", event => {
     if(timers.debug <= 0)
     {
-        ChatLib.chat(`${constants.PREFIX}&bCW has canceled opening debug menu! (disable &aStreamer Mode&b in settings if you don't want this.) (Hit F3 to stop this message spam)`)
+        ChatLib.chat(`${constants.PREFIX}&bBCW has canceled opening debug menu! (disable &aStreamer Mode&b in settings if you don't want this.) (Hit F3 to stop this message spam)`)
         timers.debug = 20
     }
     cancel(event)
@@ -58,8 +58,8 @@ registerWhen(register("renderDebug", event => {
 
 register("chat", (event) => {
     if(!(settings.streamerMode && settings.streamerDisableWaypointsOnDeath)) return
-    ChatLib.chat(`${constants.PREFIX}&bCW has disabled your waypoints because you died! "/cw ordered enable" to turn them back on. (disable &aStreamer mode&b to disable this feature)`)
-    ChatLib.command("cw ordered disable", true)
+    ChatLib.chat(`${constants.PREFIX}&bBCW has disabled your waypoints because you died! "/bcw ordered enable" to turn them back on. (disable &aStreamer mode&b to disable this feature)`)
+    ChatLib.command("bcw ordered disable", true)
 }).setChatCriteria(/^[&r&c]* . [&r&7]*You.*/g)
 
 function randomServer()

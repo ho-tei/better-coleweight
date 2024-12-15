@@ -3,7 +3,7 @@ import settings from "../settings"
 import constants from "../util/constants"
 import { drawCoolWaypoint, trace } from "../util/renderUtil"
 
-let chestCoords = JSON.parse(FileLib.read("Coleweight", "data/treasureChestCoords.json"))
+let chestCoords = JSON.parse(FileLib.read("BetterColeweight", "data/treasureChestCoords.json"))
 let lastLoc = [0, 0, 0]
 let baseCoordinates = undefined
 let lastSearchedForBase = 0

@@ -7,7 +7,7 @@ registerCommand({
     options: "",
     category: "miscellaneous",
     execute: (args) => {
-        ChatLib.command("cw reload all", true)
+        ChatLib.command("bcw reload all", true)
         ChatLib.command("soopyclearminingprofit", true)
         ChatLib.chat(`${constants.PREFIX}&bGuis reloaded! Make sure to check your drill fuel!`)
     }

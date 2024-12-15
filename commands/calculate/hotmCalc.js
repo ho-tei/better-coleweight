@@ -7,9 +7,9 @@ export function hotmCalc(hotmName, minLevel, maxLevel)
 {
     if(hotmName == undefined)
     {
-        let hotmData = JSON.parse(FileLib.read("Coleweight", "data/hotm.json")).data
+        let hotmData = JSON.parse(FileLib.read("BetterColeweight", "data/hotm.json")).data
 
-        ChatLib.chat("/cw calc hotm (hotmName listed below) (minLevel) [maxLevel]")
+        ChatLib.chat("/bcw calc hotm (hotmName listed below) (minLevel) [maxLevel]")
         for(let i = 0; i < hotmData.length; i++)
         {
             ChatLib.chat(hotmData[i].names[0])
@@ -49,7 +49,7 @@ export function hotmCalc(hotmName, minLevel, maxLevel)
 
 export function findHotmObject(hotmName)
 {
-    let hotmData = JSON.parse(FileLib.read("Coleweight", "data/hotm.json")).data
+    let hotmData = JSON.parse(FileLib.read("BetterColeweight", "data/hotm.json")).data
 
     for(let i = 0; i < hotmData.length; i++)
     {
@@ -59,7 +59,7 @@ export function findHotmObject(hotmName)
 }
 
 
-let tickData = JSON.parse(FileLib.read("Coleweight", "data/tickData.json"))
+let tickData = JSON.parse(FileLib.read("BetterColeweight", "data/tickData.json"))
 export function findCost(hotmName, minLevel, maxLevel, fortunate = false)
 {
     let costFormula
@@ -80,7 +80,7 @@ export function findCost(hotmName, minLevel, maxLevel, fortunate = false)
                 powderSum += eval(costFormula.replace("currentLevel", currentLevel))
         }
         tickData[`${hotmName} ${minLevel}-${maxLevel}`] = powderSum
-        FileLib.write("Coleweight", "data/tickData.json", JSON.stringify(tickData))
+        FileLib.write("BetterColeweight", "data/tickData.json", JSON.stringify(tickData))
         return powderSum
     }
 }

@@ -10,6 +10,6 @@ registerCommand({
     category: "miscellaneous",
     showInHelp: false,
     execute: (args) => {
-        ChatLib.chat(`${PREFIX}&bCW was made by Ninjune (discord: ninjune).`)
+        ChatLib.chat(`${PREFIX}&bBetterColeweight was made by vanguard (discord: ebisuu) and forked from Coleweight made by Ninjune (discord: ninjune).`)
     }
 })

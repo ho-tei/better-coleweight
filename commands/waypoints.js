@@ -20,7 +20,7 @@ export default registerCommand({
     subcommands: [["load", "unload", "clear", "enable", "disable", "insert", "export", "range", "import", "length", "paneclip", "etherwarp", "replace", "swap"]],
     execute: (args) => {
         if(args[1] == undefined)
-            return ChatLib.chat(`${constants.PREFIX}&eUnknown usage! Hit tab on "/cw waypoint " to see usages.`)
+            return ChatLib.chat(`${constants.PREFIX}&eUnknown usage! Hit tab on "/bcw waypoint " to see usages.`)
 
         switch(args[1].toLowerCase())
         {
@@ -44,7 +44,7 @@ export default registerCommand({
                 break
             case "add":
             case "insert":
-                if(args[2] == undefined) return ChatLib.chat(`${constants.PREFIX}&bStand where you want to add a waypoint (will be block under you) and do '/cw waypoint insert (number)'`)
+                if(args[2] == undefined) return ChatLib.chat(`${constants.PREFIX}&bStand where you want to add a waypoint (will be block under you) and do '/bcw waypoint insert (number)'`)
                 wX = parseInt(Player.getX())
                 wY = parseInt(Player.getY())-1
                 wZ = parseInt(Player.getZ())
@@ -65,7 +65,7 @@ export default registerCommand({
             case "remove":
             case "delete":
                 if(waypoints.length < 1) return ChatLib.chat(`${constants.PREFIX}&eWaypoints have not been loaded!`)
-                if(args[2] == undefined) return ChatLib.chat(`${constants.PREFIX}&bUsage: '/cw waypoint delete (number)'`)
+                if(args[2] == undefined) return ChatLib.chat(`${constants.PREFIX}&bUsage: '/bcw waypoint delete (number)'`)
                 wNum = parseInt(args[2])
                 if(wNum == undefined || wNum < 1 || wNum > waypoints.length) return ChatLib.chat(`${constants.PREFIX}&eInvalid number! Must be in range (1 - ${waypoints.length})`)
 
@@ -87,7 +87,7 @@ export default registerCommand({
                 ChatLib.chat(`${constants.PREFIX}&bCurrent length is: ${waypoints.length}`)
                 break
             case "etherwarp":
-                if(args[2] == undefined) return ChatLib.chat(`${constants.PREFIX}&bMarks a vein as etherwarp. Usage: '/cw waypoint etherwarp (number)'`)
+                if(args[2] == undefined) return ChatLib.chat(`${constants.PREFIX}&bMarks a vein as etherwarp. Usage: '/bcw waypoint etherwarp (number)'`)
                 wNum = parseInt(args[2])-1
                 if(waypoints[wNum] == undefined) return ChatLib.chat(`${constants.PREFIX}&bVein does not exist.`)
 
@@ -96,7 +96,7 @@ export default registerCommand({
 
                 break
             case "paneclip":
-                if(args[2] == undefined) return ChatLib.chat(`${constants.PREFIX}&bMarks a vein as paneclip. Usage: '/cw waypoint paneclip (number)'`)
+                if(args[2] == undefined) return ChatLib.chat(`${constants.PREFIX}&bMarks a vein as paneclip. Usage: '/bcw waypoint paneclip (number)'`)
                 wNum = parseInt(args[2])-1
                 if(waypoints[wNum] == undefined) return ChatLib.chat(`${constants.PREFIX}&bVein does not exist.`)
 
@@ -106,11 +106,11 @@ export default registerCommand({
                 break
             case "save":
                 if(args[2] == undefined)
-                    return ChatLib.chat(`${constants.PREFIX}&bUsage: /cw waypoint save (name) [description, can be spaced]`)
-                routes = JSON.parse(FileLib.read("Coleweight", "config/routes.json"))
+                    return ChatLib.chat(`${constants.PREFIX}&bUsage: /bcw waypoint save (name) [description, can be spaced]`)
+                routes = JSON.parse(FileLib.read("BetterColeweight", "config/routes.json"))
                 routes[args[2]] = {"desc": args.slice(3).join(" ") ?? "", "format": "soopy", "data": JSON.stringify(waypoints)}
-                FileLib.write("Coleweight", "config/routes.json", JSON.stringify(routes))
-                ChatLib.chat(`${constants.PREFIX}&bSaved. Do "/cw import" to import.`)
+                FileLib.write("BetterColeweight", "config/routes.json", JSON.stringify(routes))
+                ChatLib.chat(`${constants.PREFIX}&bSaved. Do "/bcw import" to import.`)
                 break
             case "swap":
                 if(parseInt(args[2]) != args[2] || parseInt(args[3]) != args[3])
@@ -151,7 +151,7 @@ export default registerCommand({
                 ChatLib.chat(`${constants.PREFIX}&bReplaced ${args[2]+1} and ${args[3]+1}!`)
                 break
             default:
-                return ChatLib.chat(`${constants.PREFIX}&eUnknown usage! Hit tab on "/cw ordered " to see usages.`)
+                return ChatLib.chat(`${constants.PREFIX}&eUnknown usage! Hit tab on "/bcw ordered " to see usages.`)
         }
     }
 })

@@ -26,7 +26,7 @@ registerCommand({
 
         if(args[1] != "toggle")
         {
-            new TextComponent(`${PREFIX}&bGo to the middle of jade crystal then do /cw coords divans toggle.`)
+            new TextComponent(`${PREFIX}&bGo to the middle of jade crystal then do /bcw coords divans toggle.`)
             .chat()
         }
         else

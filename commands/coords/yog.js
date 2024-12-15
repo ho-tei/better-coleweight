@@ -27,7 +27,7 @@ registerCommand({
 
         if(args[1] != "toggle")
         {
-            new TextComponent(`${PREFIX}&bGo to the leftmost corner of the topaz crystal facing bal close to bal then do /cw coords yog toggle.`)
+            new TextComponent(`${PREFIX}&bGo to the leftmost corner of the topaz crystal facing bal close to bal then do /bcw coords yog toggle.`)
             .chat()
         }
         else

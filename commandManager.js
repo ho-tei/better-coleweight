@@ -28,7 +28,7 @@ register("command", (...args) => {
         }
     })
 
-    if(!stop) ChatLib.chat(`${constants.PREFIX}&bUnknown command. Type "/cw help" to see all commands.`)
+    if(!stop) ChatLib.chat(`${constants.PREFIX}&bUnknown command. Type "/bcw help" to see all commands.`)
 }).setTabCompletions((args) => {
     let output = []
 
@@ -50,11 +50,11 @@ register("command", (...args) => {
         output = findTabOutput(args[0], commandNames)
 
     return output
-}).setName("cw").setAliases(["coleweight"])
+}).setName("bcw").setAliases(["bettercoleweight", "bettercw"])
 
 
 register("command", (...args) => {
-   ChatLib.command(`cw fetchdiscord ${args[0]}`, true)
+   ChatLib.command(`bcw fetchdiscord ${args[0]}`, true)
 }).setTabCompletions((args) => {
     let players = World.getAllPlayers().map((p) => p.getName())
     .filter((n) =>

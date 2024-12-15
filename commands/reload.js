@@ -15,7 +15,7 @@ registerCommand({
     subcommands: [subcommands],
     execute: (args) => {
         if(args[1] == undefined)
-            return ChatLib.chat(`${constants.PREFIX}&cMust specify a gui. Hit tab on '/cw reload ' for options.`)
+            return ChatLib.chat(`${constants.PREFIX}&cMust specify a gui. Hit tab on '/bcw reload ' for options.`)
         let all = false,
             found = false
         if(args[1].toLowerCase() == "all")

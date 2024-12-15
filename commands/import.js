@@ -5,8 +5,8 @@ import constants from "../util/constants"
 import { load } from "./ordered"
 const PREFIX = constants.PREFIX
 
-if(!FileLib.exists("Coleweight", "config/routes.json"))
-    FileLib.write("Coleweight", "config/routes.json", FileLib.read("Coleweight", "data/defaultroutes"))
+if(!FileLib.exists("BetterColeweight", "config/routes.json"))
+    FileLib.write("BetterColeweight", "config/routes.json", FileLib.read("BetterColeweight", "data/defaultroutes"))
 
 registerCommand({
     aliases: ["import"],
@@ -14,7 +14,7 @@ registerCommand({
     options: "[route]",
     category: "miscellaneous",
     execute: (args) => {
-        let routes = JSON.parse(FileLib.read("Coleweight", "config/routes.json"))
+        let routes = JSON.parse(FileLib.read("BetterColeweight", "config/routes.json"))
 
         if(args[1] == undefined)
         {
@@ -25,14 +25,14 @@ registerCommand({
                     ChatLib.chat(`&b${route.name}: ${route.description}`)
                 })
                 ChatLib.chat("")
-                ChatLib.chat(`${PREFIX}&bDo '&e/cw import (route)&b' to copy the import for Skytils!`)
+                ChatLib.chat(`${PREFIX}&bDo '&e/bcw import (route)&b' to copy the import for Skytils!`)
             })
             .catch(err => {
                 if(settings.debug) console.log(err)
                 local(routes)
                 ChatLib.chat("&cUnable to fetch online routes. (api may be down.)")
                 ChatLib.chat("")
-                ChatLib.chat(`${PREFIX}&bDo '&e/cw import (route)&b' to copy the import!`)
+                ChatLib.chat(`${PREFIX}&bDo '&e/bcw import (route)&b' to copy the import!`)
             })
         }
         else

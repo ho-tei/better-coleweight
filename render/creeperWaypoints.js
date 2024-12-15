@@ -4,7 +4,7 @@ import { gunpowderCheck, registerWhen } from "../util/helperFunctions";
 import { drawEspBox } from "../util/renderUtil"
 
 let waypoints = []
-let coordsRows = FileLib.read("Coleweight", "data/creepers.txt").split("\n")
+let coordsRows = FileLib.read("BetterColeweight", "data/creepers.txt").split("\n")
 coordsRows.forEach(unsplitRow => {
     let row = unsplitRow.split(" ")
     waypoints.push([parseInt(row[0]) + 0.5, parseInt(row[1]), parseInt(row[2]) + 0.5])

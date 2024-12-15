@@ -11,7 +11,7 @@ registerCommand({
         let points = args[1]
         if (points == undefined || parseInt(points) != points)
             return ChatLib.chat(`${constants.PREFIX}&bPoints must be a integer!`);
-        ChatLib.chat(`${constants.PREFIX}&bLoaded Coleweight waypoint data.`);
+        ChatLib.chat(`${constants.PREFIX}&bLoaded BetterColeweight waypoint data.`);
         let waypoints = getWaypoints(Java.type("net.minecraft.client.gui.GuiScreen").func_146277_j(), "soopy")
         waypoints = waypoints["waypoints"];
         let waypointAmount = waypoints.length;

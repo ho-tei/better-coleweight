@@ -1,6 +1,6 @@
 import { @Vigilant, @ButtonProperty, @SwitchProperty, @SelectorProperty, @SliderProperty, @TextProperty, @ColorProperty, Color } from "../Vigilance/index"
 
-@Vigilant("Coleweight/config", "Coleweight Settings", {
+@Vigilant("BetterColeweight/config", "BetterColeweight Settings", {
     getCategoryComparator: () => (a, b) => {
         const categories = ["General", "Gui", "Stats", "Waypoints", "Other"];
 
@@ -12,8 +12,8 @@ import { @Vigilant, @ButtonProperty, @SwitchProperty, @SelectorProperty, @Slider
 class Settings {
     constructor() {
         this.initialize(this);
-        this.setCategoryDescription("General", `&aColeweight &bv${JSON.parse(FileLib.read("Coleweight", "metadata.json")).version}` + 
-        `\n&aBy &bNinjune`)
+        this.setCategoryDescription("General", `&aBetterColeweight &bv${JSON.parse(FileLib.read("BetterColeweight", "metadata.json")).version}` + 
+        `\n&aBy &bvanguard\n&bForked from Coleweight by Ninjune`)
     }
     // CAT General
     // SUBCAT Discord
@@ -44,7 +44,7 @@ class Settings {
         placeholder: "Clear"
     })
     clearLobbies() {
-        ChatLib.command("cw clearlobbies", true);
+        ChatLib.command("bcw clearlobbies", true);
     }
     // SUBCAT Pristine Sound
     @TextProperty({
@@ -216,7 +216,7 @@ class Settings {
         placeholder: "Open"
     })
     moveAlloyTrackerLocation() {
-        ChatLib.command("cw move alloy", true);
+        ChatLib.command("bcw move alloy", true);
     }
     // SUBCAT Coin Tracker
     @SwitchProperty({
@@ -243,7 +243,7 @@ class Settings {
         placeholder: "Open"
     })
     moveCoinTrackerLocation() {
-        ChatLib.command("cw move coin", true);
+        ChatLib.command("bcw move coin", true);
     }
 
     @SelectorProperty({
@@ -271,12 +271,12 @@ class Settings {
         placeholder: "Open"
     })
     moveCwLocation() {
-        ChatLib.command("cw move coleweight", true);
+        ChatLib.command("bcw move coleweight", true);
     }
 
     @TextProperty({
         name: "Pass player",
-        description: "Player that you want to pass in Coleweight. Case insensitive. Reload the gui with \"/cw reload coleweight\" after changing this. (leave blank for none)",
+        description: "Player that you want to pass in Coleweight. Case insensitive. Reload the gui with \"/bcw reload coleweight\" after changing this. (leave blank for none)",
         subcategory: "Coleweight Tracker",
         category: "Gui"
     })
@@ -284,7 +284,7 @@ class Settings {
     // SUBCAT Collection
     @SwitchProperty({
         name: "Collection tracker",
-        description: "&4Deprecated &7Tracks collections ('/cw track (collection)' to set).",
+        description: "&4Deprecated &7Tracks collections ('/bcw track (collection)' to set).",
         subcategory: "Collection",
         category: "Gui"
     })
@@ -314,7 +314,7 @@ class Settings {
         placeholder: "Open"
     })
     moveCollectionLocation() {
-        ChatLib.command("cw move collection", true);
+        ChatLib.command("bcw move collection", true);
     }
 
     // SUBCAT Metal Detector Solver
@@ -374,7 +374,7 @@ class Settings {
         placeholder: "Open"
     })
     moveAbilitiesLocation() {
-        ChatLib.command("cw move miningabilities", true);
+        ChatLib.command("bcw move miningabilities", true);
     }
     // SUBCAT Powdertracker
     @SwitchProperty({ 
@@ -409,7 +409,7 @@ class Settings {
         placeholder: "Open"
     })
     movePowderLocation() {
-        ChatLib.command("cw move powdertracker", true);
+        ChatLib.command("bcw move powdertracker", true);
     }
     // SUBCAT Scrap tracker
     @SwitchProperty({
@@ -428,12 +428,12 @@ class Settings {
         placeholder: "Open"
     })
     moveCwLocation() {
-        ChatLib.command("cw move scrap", true);
+        ChatLib.command("bcw move scrap", true);
     }
     // SUBCAT Stopwatch
     @SwitchProperty({
         name: "Stopwatch",
-        description: "Toggles visibility of stopwatch (/cw stopwatch)",
+        description: "Toggles visibility of stopwatch (/bcw stopwatch)",
         subcategory: "Stopwatch",
         category: "Gui"
     })
@@ -447,12 +447,12 @@ class Settings {
         placeholder: "Open"
     })
     moveStopwatchLocation() {
-        ChatLib.command("cw move stopwatch", true);
+        ChatLib.command("bcw move stopwatch", true);
     }
     // SUBCAT Timer
     @SwitchProperty({
         name: "Timer",
-        description: "Toggles visibility of timer (/cw timer)",
+        description: "Toggles visibility of timer (/bcw timer)",
         subcategory: "Timer",
         category: "Gui"
     })
@@ -466,7 +466,7 @@ class Settings {
         placeholder: "Open"
     })
     moveTimerLocation() {
-        ChatLib.command("cw move timer", true);
+        ChatLib.command("bcw move timer", true);
     }
 
     @SwitchProperty({
@@ -618,7 +618,7 @@ class Settings {
     // SUBCAT Normal Waypoints
     @SwitchProperty({
         name: "Show Normal Waypoint Distance",
-        description: "If normal waypoints (/cw waypoint) should show distance.",
+        description: "If normal waypoints (/bcw waypoint) should show distance.",
         category: "Waypoints",
         subcategory: "Normal Waypoints",
     })
@@ -626,7 +626,7 @@ class Settings {
 
     @SwitchProperty({
         name: "Show Box",
-        description: "If normal waypoints (/cw waypoint) should show the box on the waypoint.",
+        description: "If normal waypoints (/bcw waypoint) should show the box on the waypoint.",
         category: "Waypoints",
         subcategory: "Normal Waypoints",
     })
@@ -634,7 +634,7 @@ class Settings {
 
     @SwitchProperty({
         name: "Show Line",
-        description: "If normal waypoints (/cw waypoint) should show a line between waypoints showing where to etherwarp.",
+        description: "If normal waypoints (/bcw waypoint) should show a line between waypoints showing where to etherwarp.",
         category: "Waypoints",
         subcategory: "Normal Waypoints",
     })
@@ -642,7 +642,7 @@ class Settings {
 
     @SwitchProperty({
         name: "Show Horizontal Distance",
-        description: "If normal waypoints (/cw waypoint) should show only horizontal (x and z) distance instead of including the y in distance calculation.",
+        description: "If normal waypoints (/bcw waypoint) should show only horizontal (x and z) distance instead of including the y in distance calculation.",
         category: "Waypoints",
         subcategory: "Normal Waypoints",
     })
@@ -673,7 +673,7 @@ class Settings {
         placeholder: "Open"
     })
     moveffLocation() {
-        ChatLib.command("cw move ff", true);
+        ChatLib.command("bcw move ff", true);
     }
     // SUBCAT Foraging
     @SwitchProperty({
@@ -701,7 +701,7 @@ class Settings {
         placeholder: "Open"
     })
     moveGyroLocation() {
-        ChatLib.command("cw move gyro", true);
+        ChatLib.command("bcw move gyro", true);
     }
     // SUBCAT Rift
     @SwitchProperty({
@@ -720,7 +720,7 @@ class Settings {
         placeholder: "Open"
     })
     moveDanceLocation() {
-        ChatLib.command("cw move dance", true);
+        ChatLib.command("bcw move dance", true);
     }
     // SUBCAT UYOR
     @SwitchProperty({
