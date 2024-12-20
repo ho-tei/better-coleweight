@@ -3,116 +3,102 @@ import constants from "../util/constants";
 
 let quickswitchActive = false;
 let firstIteration = true;
-let abilities = []
+let abilities = [];
 let page = 0;
 let nextAbility = 0;
-let clickedAbility = false
+let clickedAbility = false;
 register("guiMouseClick", (x, y, button, gui, event) => {
-    if(!quickswitchActive)
-        return;
-    const inventory = Player.getContainer();
-    if(!isHotmMenu(inventory))
-        return;
-    event.setCanceled(true)
-    if(firstIteration)
-    {
-        const items = inventory.getItems();
-        for(let i = 0; i < items.length; i++)
-        {
-            let item = items[i];
-            if(item != undefined && item.getUnlocalizedName() == "tile.blockEmerald")
-            {
-                abilities.push({page: page, slot: i})
-                if(settings.debug)
-                    console.log("page: " + page + " slot: " + i)
-            }
-        }
-
-        if(page == 0)
-        {
-            click(8, false, "RIGHT");
-            page++
-        }
-        else
-        {
-            firstIteration = false;
-            ChatLib.chat(`${constants.PREFIX}&bSuccessfully recorded available abilities!`)
-            Client.currentGui.close()
-        }
+  if (!quickswitchActive) return;
+  const inventory = Player.getContainer();
+  if (!isHotmMenu(inventory)) return;
+  event.setCanceled(true);
+  if (firstIteration) {
+    const items = inventory.getItems();
+    for (let i = 0; i < items.length; i++) {
+      let item = items[i];
+      if (
+        item != undefined &&
+        item.getUnlocalizedName() == "tile.blockEmerald"
+      ) {
+        abilities.push({ page: page, slot: i });
+        if (settings.debug) console.log("page: " + page + " slot: " + i);
+      }
     }
-    else
-    {
-        let ability = abilities[nextAbility];
-        if(!clickedAbility && ability.page == page)
-        {
-            click(ability.slot, false, "LEFT")
-            clickedAbility = true;
-            nextAbility = (nextAbility+1) % abilities.length
-        }
-        else if (!clickedAbility && page < 1)
-        {
-            click(8, false, "RIGHT");
-            page++
-        }
-        else
-            Client.currentGui.close()
-    }
-    
-})
 
+    if (page == 0) {
+      click(8, false, "RIGHT");
+      page++;
+    } else {
+      firstIteration = false;
+      ChatLib.chat(
+        `${constants.PREFIX}&bSuccessfully recorded available abilities!`
+      );
+      Client.currentGui.close();
+    }
+  } else {
+    let ability = abilities[nextAbility];
+    if (!clickedAbility && ability.page == page) {
+      click(ability.slot, false, "LEFT");
+      clickedAbility = true;
+      nextAbility = (nextAbility + 1) % abilities.length;
+    } else if (!clickedAbility && page < 1) {
+      click(8, false, "RIGHT");
+      page++;
+    } else Client.currentGui.close();
+  }
+});
 
 register("chat", () => {
-    resetAbilities()
-}).setChatCriteria("Reset your Heart of the Mountain! Your Perks and Abilities have been reset.")
-
+  resetAbilities();
+}).setChatCriteria(
+  "Reset your Heart of the Mountain! Your Perks and Abilities have been reset."
+);
 
 register("guiClosed", (gui) => {
-    if(gui.toString().includes("GuiChat") || Player.getContainer()?.getName() != "container") // closed menu
-        return;
-    page = 0;
-    clickedAbility = false;
-    quickswitchActive = false;
-})
+  if (
+    gui.toString().includes("GuiChat") ||
+    Player.getContainer()?.getName() != "container"
+  )
+    // closed menu
+    return;
+  page = 0;
+  clickedAbility = false;
+  quickswitchActive = false;
+});
 
-
-export function quickswitch()
-{
-    quickswitchActive = true;
-    ChatLib.command("hotm")
+export function quickswitch() {
+  quickswitchActive = true;
+  ChatLib.command("hotm");
 }
 
-
-export function resetAbilities()
-{
-    abilities = [];
-    firstIteration = true;
-    page = 0;
-    nextAbility = 0;
-    quickswitchActive = false;
+export function resetAbilities() {
+  abilities = [];
+  firstIteration = true;
+  page = 0;
+  nextAbility = 0;
+  quickswitchActive = false;
 }
-
 
 /**
- * 
- * @param {Inventory} inventory 
- * @returns 
+ *
+ * @param {Inventory} inventory
+ * @returns
  */
-function isHotmMenu(inventory)
-{
-    return inventory?.getName() != undefined &&
-        inventory.getName().includes("Heart of the Mountain")
+function isHotmMenu(inventory) {
+  return (
+    inventory?.getName() != undefined &&
+    inventory.getName().includes("Heart of the Mountain")
+  );
 }
 
-function click(slot, shift, clickType)
-{
-    Player.getContainer().click(slot, shift, clickType);
+function click(slot, shift, clickType) {
+  Player.getContainer().click(slot, shift, clickType);
 }
 
 /*register("guiOpened", (event) => {
     if(!justChanged)
         checkGui = true;
 })*/
-
 
 /*register("postGuiRender", (x, y, gui) => {
     if(!checkGui)

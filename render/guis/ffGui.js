@@ -2,6 +2,10 @@ import { registerGui } from "../../guiManager"
 import settings from "../../settings"
 import { BaseGui } from "../BaseGui"
 
+/**
+ * ? Again, why is this in a mining mod??
+ */
+
 let ffCountdownTo = 0
 
 

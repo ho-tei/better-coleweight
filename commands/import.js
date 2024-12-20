@@ -1,22 +1,34 @@
-import axios from "../../axios"
-import { registerCommand } from "../commandManager"
-import settings from "../settings"
-import constants from "../util/constants"
-import { load } from "./ordered"
-const PREFIX = constants.PREFIX
+import axios from "../../axios";
+import { registerCommand } from "../commandManager";
+import settings from "../settings";
+import constants from "../util/constants";
+import { load } from "./ordered";
+const PREFIX = constants.PREFIX;
 
-if(!FileLib.exists("BetterColeweight", "config/routes.json"))
-    FileLib.write("BetterColeweight", "config/routes.json", FileLib.read("BetterColeweight", "data/defaultroutes"))
+/**
+ *
+ * ! Rework to be able to be used locally exclusively
+ * * -> No routes saved in API, none could be added either way since external
+ */
+
+if (!FileLib.exists("BetterColeweight", "config/routes.json"))
+  FileLib.write(
+    "BetterColeweight",
+    "config/routes.json",
+    FileLib.read("BetterColeweight", "data/defaultroutes")
+  );
 
 registerCommand({
-    aliases: ["import"],
-    description: "Import waypoints into Skytils.",
-    options: "[route]",
-    category: "miscellaneous",
-    execute: (args) => {
-        let routes = JSON.parse(FileLib.read("BetterColeweight", "config/routes.json"))
+  aliases: ["import"],
+  description: "Import waypoints into Skytils.",
+  options: "[route]",
+  category: "miscellaneous",
+  execute: (args) => {
+    let routes = JSON.parse(
+      FileLib.read("BetterColeweight", "config/routes.json")
+    );
 
-        if(args[1] == undefined)
+    /*if(args[1] == undefined)
         {
             axios.get("https://ninjune.dev/api/cw/routes")
             .then(res => {
@@ -63,18 +75,16 @@ registerCommand({
 
                 ChatLib.chat(`${PREFIX}&bSuccessfully ${route.format != "soopy" ? "copied" : "loaded"} &a${args[1]}&b route! Format: &a${route.format}`)
             }
-        }
-    }
-})
+        }*/
+  },
+});
 
-
-function local(routes)
-{
-    ChatLib.chat("")
-    ChatLib.chat(ChatLib.getCenteredText("&aLocal routes:"))
-    Object.keys(routes).forEach(key => {
-        ChatLib.chat(`&b${key}: ${routes[key].desc}`)
-    })
-    ChatLib.chat("")
-    ChatLib.chat(ChatLib.getCenteredText("&aOnline routes:"))
+function local(routes) {
+  ChatLib.chat("");
+  ChatLib.chat(ChatLib.getCenteredText("&aLocal routes:"));
+  Object.keys(routes).forEach((key) => {
+    ChatLib.chat(`&b${key}: ${routes[key].desc}`);
+  });
+  ChatLib.chat("");
+  ChatLib.chat(ChatLib.getCenteredText("&aOnline routes:")); // ? Seems like online routes weren't intended anyways??
 }
