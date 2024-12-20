@@ -61,20 +61,11 @@ register("command", (...args) => {
       }
     });
 
-<<<<<<< HEAD
     if(output.length == 0)
         output = findTabOutput(args[0], commandNames)
 
     return output
 }).setName("bcw").setAliases(["bettercw"])
-=======
-    if (output.length == 0) output = findTabOutput(args[0], commandNames);
->>>>>>> 11ea832adefbb18778864f1083e437a7fb1260ea
-
-    return output;
-  })
-  .setName("bcw")
-  .setAliases(["bettercw"]);
 
 register("command", (...args) => {
   ChatLib.command(`bcw fetchdiscord ${args[0]}`, true);
@@ -113,8 +104,6 @@ import "./commands/coords/spiral";
 import "./commands/coords/temple";
 import "./commands/coords/throne";
 import "./commands/coords/yog";
-
-<<<<<<< HEAD
 import "./commands/calculate.js"
 import "./commands/config"
 import "./commands/coords.js"
@@ -144,34 +133,3 @@ import "./commands/timer"
 import "./commands/track"
 import "./commands/waypoints"
 import "./commands/shaftparty.js"
-=======
-import "./commands/calculate.js";
-import "./commands/config";
-import "./commands/coords.js";
-import "./commands/credits";
-import "./commands/cw";
-import "./commands/deleteroute";
-import "./commands/drawLine";
-import "./commands/fetchDiscord";
-import "./commands/gemstone";
-import "./commands/help";
-import "./commands/import";
-import "./commands/info";
-import "./commands/leaderboard";
-import "./commands/markingLobbies";
-import "./commands/miningtest";
-import "./commands/move";
-import "./commands/optimize";
-import "./commands/ordered";
-import "./commands/quickswitch";
-import "./commands/rankcolor";
-import "./commands/reload";
-import "./commands/resetabilities";
-import "./commands/setkey";
-import "./commands/stopwatch";
-import "./commands/structure";
-import "./commands/timer";
-import "./commands/track";
-import "./commands/waypoints";
-import "./commands/shaftparty.js";
->>>>>>> 11ea832adefbb18778864f1083e437a7fb1260ea
