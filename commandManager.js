@@ -50,7 +50,7 @@ register("command", (...args) => {
         output = findTabOutput(args[0], commandNames)
 
     return output
-}).setName("bcw").setAliases(["bettercoleweight", "bettercw"])
+}).setName("bcw").setAliases(["bettercw"])
 
 
 register("command", (...args) => {
@@ -120,3 +120,4 @@ import "./commands/structure"
 import "./commands/timer"
 import "./commands/track"
 import "./commands/waypoints"
+import "./commands/shaftparty.js"
